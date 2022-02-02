@@ -1,13 +1,11 @@
-<?php
-
-$zip = new ZipArchive;
-
-$zipped = $zip->open('abc.zip');
-
-if ( $zipped ) {
-
-    $zip->extractTo(dirname(__FILE__).'folder_name');
-
-    $zip->close();
-
-} ?>
+<?php  
+     $zip = new ZipArchive;  
+     $res = $zip->open('archive.zip');  
+     if ($res === TRUE) {  
+         $zip->extractTo('dest/');  
+         $zip->close();  
+         echo 'ok';  
+     } else {  
+         echo 'failed';  
+     }  
+?>
